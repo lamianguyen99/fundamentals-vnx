@@ -114,7 +114,7 @@ PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
    
 ## Domain
 
-1. Domain là gì ?
+### 1. Domain là gì ?
 
 Domain(hay tên miền) là địa chỉ độc nhất của một website trên `Internet`, hoạt động giống như một `Ngôi nhà ảo` chứa đựng toàn bộ nội dung và thông tin của trang web. Thay vì phải ghi nhớ dãy số phức tạp của địa chỉ IP, người dùng có thể dế dàng truy cập website bằng cách nhập tên miền vào trình duyệt.
 
@@ -140,26 +140,35 @@ Bạn có thể tạo nhiều Sub-Domain để tổ chức Website một cách h
 
 Để domain hoạt động bạn cần [đăng ký tên miền](https://vietnix.vn/dang-ky-ten-mien/) với nhà cung cấp dịch vụ Domain và kết nối nó với Hosting thông qua hệ thống DNS(Domain Name System)
 
+### 2. Các trạng thái phổ biến của một Domain:
 
-3. Các trạng thái của domain
-4. Subdomain là gì?
-5. Virtual Hosts là gì?
+- Register (dã đăng ký): Domain đã được đăng ký và thuộc về chủ sở hữu.
 
-```
-1. Domain (tên miền) là một địa chỉ trên internet dùng để định danh một website hoặc dịch vụ trực tuyến. Nó giúp người dùng dễ dàng truy cập và nhớ địa chỉ của website thay vì sử dụng địa chỉ IP.
+- Available (Còn trống): Doamin chưa được đăng ký và có thể được đăng ký.
 
-2. Các trạng thái phổ biến của một domain:
-   - Registered (đã đăng ký): Domain đã được đăng ký và thuộc về chủ sở hữu.
-   - Available (còn trống): Domain chưa được đăng ký và có thể được đăng ký.
-   - Expired (đã hết hạn): Domain đã hết hạn và cần được gia hạn để tránh bị mất.
-   - Pending Delete (chờ xóa): Domain đang trong quá trình bị xóa sau khi hết hạn.
+- Expired (Đã hết hạn): Domain đã hết hạn và cần được gia hạn để tránh bị mất.
 
-3. Subdomain là một phần của domain chính, được sử dụng để tổ chức và phân chia nội dung. Ví dụ: `www.example.com` là subdomain của `example.com`.
+- Pending Delete (Chờ xóa): Domain đang trong quá trình bị xóa sau khi hết hạn.
 
-4. Virtual Hosts là một tính năng của web server cho phép chạy nhiều website trên cùng một địa chỉ IP. Điều này giúp tối ưu hóa việc sử dụng tài nguyên máy chủ và quản lý nhiều website cùng lúc.
-```
-   
-Mail Server
+### 4. Subdomain là gì?
+
+Sub-Domain là thành phần của Domain chính, được sử dụng để tổ chức và phân chia nội dung của một trang Website. Ví dụ: `host247.vietnix.vn` là Sub-Domain của `vietnix.vn`
+
+
+### 5. Virtual Hosts là gì?
+
+Virtual Host là một phương thức lưu trữ cho phép lưu nhiều tên miền khác nhau trên cùng một máy chủ Server. Virtual Hosts có thể được xem như một giải pháp cho phép bạn nhúng rất nhiều tên miền trên một địa chỉ IP của một Server duy nhất. 
+
+Tùy vào cách cài đặt, Server sẽ tự hiểu tên miền nào đang hoạt động bên trong vị trí lưu trứ của Server.
+
+Virtual Host là một giải pháp khá hiệu quả và tiết kiệm chi phí hơn khi sử dụng nhiều tên miền chỉ trên một địa chỉ IP.
+
+- Người dùng có thể dễ dàng truy cập vào bất kỳ một thư mục lưu trữ Code của các trang web khác nhau mà không cần copy code vào thư mục htdocs trong giao diện  XAMMP.
+
+- Trong quá trình thiết lập ban đầu, nếu bạn phân vùng lưu trứ code ở một Folder code  nhất định thì khi cài đặt lại HĐH Windows, bạn không cần sao lưu đồng bộ lại dữ trong Folder code rất tiện lợi.
+
+
+## Mail Server
 
 Tìm hiểu MX Record
 
