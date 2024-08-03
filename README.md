@@ -55,17 +55,52 @@ Trong đó:
    Khi chạy lệnh này, OPENSSL sẽ yêu cầu bạn nhập một số thông tin về chứng chỉ như: tên, quốc gia, tiểu bang, thành phố, tên cty, tên bộ phận, tên miền. Sau khi nhập đầy đủ thông tin OPENSSL sẽ tạo ra 2 file như trên.
 
 
-
-
-
-
-
-
-
 Sau đó, bạn có thể gửi file CSR (tech.training.vietnix.tech.csr) đến CA để yêu cầu cấp chứng chỉ SSL.
-   
 
-Pem file là gì ?
+Các bước thực hiện như sau:
+
+1. Truy cập vào trang web của CA(ví dụ Let's Encrypt, DigiCert, Comodo,v..v...) và chọn tùy chọn "Yêu cầu chứng chỉ mới".
+
+2. Tải file CSR `tech.training.vietnix.tech.csr` lên và cung cấp các thông tin cần thiết khác như tên miền, thông tin tổ chức,v.v...
+
+3. Thực hiện các bước thanh toán khác (nếu cần) và chờ CA xử lý yêu cầu.
+
+4. Khi CA cấp chứng chỉ, bạn sẽ được cung cấp file chứng chỉ(Thường có đuôi .crt hoặc .pem).
+
+Với 2 bước này, bạn đã tạo được file CSR và yêu cầu chứng chỉ SSL cho domain `tech.training.vietnix.tech`  để cài đặt chứng chỉ SSL trên máy chủ web.
+
+
+
+### 5. Pem file là gì ?
+
+Định dạng file phổ biến để lưu trữ và trao đổi các thông tin bảo mật như: Chứng chỉ số (digital certificates), khóa công khai(public keys), và khóa riêng (private keys). 
+
+Các file PEM thường được bắt đầu và kết thúc bằng các dòng chữ như: `-----BEGIN CERTIFICATE-----` và `-----END CERTIFICATE-----`.
+
+Dữ liệu trong file PEM được mã hóa bằng Base64, có thể đọc và chỉnh sửa bằng trình soạn thảo văn bản thông thường.
+
+Khi trình duyệt kết nối với 1 website sử dụng SSL/TLS, website sẽ cung cấp một chứng chỉ số(digital certificate) để xác thực danh tính của nó.
+
+Chứng chỉ số này chứa thông tin như tên miền, tổ chức phát hành, khóa công khai, v.v..
+
+Để cài đặt chứng chỉ SSL/TLS trên máy chủ website, cần có 3 file chính: 
+ 
+1. Certificate file (.crt/.pem): chứa `chứng chỉ số` của website tự ký hoặc được CA cấp.
+
+2. Private key file(.key/.pem) chứa `private key` để mã hóa/giải mã dữ liệu.
+
+3. CA Bundle file (.pem): Chứa chuỗi chứng chỉ `CA trung gian` để xác thực chuỗi tin cậy của chứng chỉ CA ban đầu.
+
+---
+
+ĐĂNG KÝ SSL/TLS cũng giống như bạn đi đăng ký giấy kết hôn:
+```
+Private key: Giấy đăng ký kết hôn gồm những thông tin của bạn.
+Public key : Con dấu xác nhận của cơ quan địa phương.
+CA ban đầu : Xác nhận của cơ quan địa phương.
+Bundle CA  : Xác nhận của các tổ chức, cơ quan cấp cao về sự hợp lệ của cơ quan địa phương.
+```
+
 
 Private key ssl là gì ?
 
