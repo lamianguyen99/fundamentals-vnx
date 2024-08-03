@@ -1,32 +1,25 @@
 # Kiến thưc cơ bản-vnx
-
-## Gắn thẻ người dùng
-
-Hãy chào @username!
-
-## Biểu tượng cảm xúc
-
-Tôi rất :grinning: khi sử dụng Markdown trên GitHub!
-
-*innghieng*
-
-**in dam**
-
-***in nghienva in dam***
-
-~~gach giua~~
-
-code inline `sieu dep` ne
-@@@@@@@@@@@@@@@@
-
-@@@@@@@@@@@@@@@@
-
-
+-
 ## SSL
 
-SSL là gì ?
 
-Có bao nhiêu cách chứng thực SSL ?
+Đa phần người dùng sẽ ngừng truy cập nếu được thông báo kết nối không an toàn. Đặc biệt đối với các website `thương mại điện tử`, việc không bảo mật sẽ khiến doanh nghiệp đánh mất lượng lớn khách hàng tiềm năng và doanh thu về. Chính vì thế, chứng chỉ SSL trở nên vô cùng quan trọng.
+
+1. SSL là gì ?
+
+SSL (Secure Sockets Layer) là một [giao thức](https://vi.wikipedia.org/wiki/Giao_th%E1%BB%A9c_truy%E1%BB%81n_th%C3%B4ng) bảo mật được sử dụng để tạo kết nối an toàn giữa `trình duyệt web` và `máy chủ web`. Nó mã hóa dữ liệu truyền giữa client và server, đảm bảo rằng thông tin không bị đánh cắp hoặc can thiệp bởi bên thứ ba. Hiện nay, SSL được xem là tiêu chuẩn bảo mật cho đa số website trên thế giới, giúp dữ liệu truyền đi trên `Internet` được bảo vệ một cách an toàn.
+
+SSL được `Netscape` phát triển lần đầu vào năm 1995. Với mục đích đảm bảo quyền riêng tư, xác thực toàn vẹn dữ liệu trong truyền thông `Internet`. Năm 1999, SSL đã được cập nhật để trở thành [TLS](https://vietnix.vn/tls-la-gi/) ( Transport Layer Security) 
+
+
+2. Có bao nhiêu cách chứng thực SSL ?
+
+Có 2 cách chứng thực SSL chính:
+
+   - Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - CA): Các tổ chức như Let's Encrypt, DigiCert, GoDaddy, v.v. cung cấp và quản lý các chứng chỉ SSL.
+ 
+   - Chứng thực sử dụng chứng chỉ tự ký (self-signed certificate): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
+
 
 CSR file dùng làm gì trong quá trình tạo SSL
 
@@ -38,11 +31,9 @@ Private key ssl là gì ?
 
 PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
 
-1. SSL (Secure Sockets Layer) là một giao thức bảo mật được sử dụng để tạo kết nối an toàn giữa trình duyệt web và máy chủ web. Nó mã hóa dữ liệu truyền giữa client và server, đảm bảo rằng thông tin không bị đánh cắp hoặc can thiệp bởi bên thứ ba.
 
-2. Có 2 cách chứng thực SSL chính:
-   - Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - CA): Các tổ chức như Let's Encrypt, DigiCert, GoDaddy, v.v. cung cấp và quản lý các chứng chỉ SSL.
-   - Chứng thực sử dụng chứng chỉ tự ký (self-signed certificate): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
+
+2. C
 
 3. CSR (Certificate Signing Request) file là một yêu cầu gửi đến Tổ chức Chứng nhận để nhận được một chứng chỉ SSL hợp lệ. Nó chứa thông tin về máy chủ, tên miền và thông tin xác thực khác mà CA sẽ sử dụng để cấp chứng chỉ.
 
