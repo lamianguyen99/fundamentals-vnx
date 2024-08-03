@@ -1,4 +1,5 @@
-# fundamentals-vnx
+# Kiến thưc cơ bản-vnx
+
 ## Bảng
 
 | Cột 1 | Cột 2 | Cột 3 |
@@ -111,12 +112,38 @@ PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
    Lệnh này sẽ tạo ra file PFX có tên `tech.training.vietnix.tech.pfx` từ file CRT và Private Key.
 
    
-# Domain
+## Domain
 
 1. Domain là gì ?
-2. Các trạng thái của domain
-3. Subdomain là gì?
-4. Virtual Hosts là gì?
+
+Domain(hay tên miền) là địa chỉ độc nhất của một website trên `Internet`, hoạt động giống như một `Ngôi nhà ảo` chứa đựng toàn bộ nội dung và thông tin của trang web. Thay vì phải ghi nhớ dãy số phức tạp của địa chỉ IP, người dùng có thể dế dàng truy cập website bằng cách nhập tên miền vào trình duyệt.
+
+Domain được cấu thành từ:  Protocol + Sub-Domain + Second-Level Domain(SLD) + Top-Level Domain(TLD) + Page-path
+
+Ví dụ các thành phần của Domain:  https://host247.vietnix.vn/webmail
+
+`https://` : Protocol
+
+`host247`  : Sub-Domain
+
+`vietnix`  : Second-Level Domain(SLD) 
+
+`.vn`      : Top-Level Domain(TLD) 
+
+`/webmail` : Page-PATH
+
+`vietnix.vn` : Domain name
+
+Có 2 loại TLD(Top-Level Domain) chính là `.vn` và Quốc tế(`.com` , `.org` , `.net` ,...) 
+
+Bạn có thể tạo nhiều Sub-Domain để tổ chức Website một cách hiệu quả.
+
+Để domain hoạt động bạn cần [đăng ký tên miền](https://vietnix.vn/dang-ky-ten-mien/) với nhà cung cấp dịch vụ Domain và kết nối nó với Hosting thông qua hệ thống DNS(Domain Name System)
+
+
+3. Các trạng thái của domain
+4. Subdomain là gì?
+5. Virtual Hosts là gì?
 
 ```
 1. Domain (tên miền) là một địa chỉ trên internet dùng để định danh một website hoặc dịch vụ trực tuyến. Nó giúp người dùng dễ dàng truy cập và nhớ địa chỉ của website thay vì sử dụng địa chỉ IP.
