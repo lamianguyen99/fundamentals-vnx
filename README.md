@@ -1,49 +1,75 @@
 # Kiến thưc cơ bản-vnx
--
+
 ## SSL
 
 
 Đa phần người dùng sẽ ngừng truy cập nếu được thông báo kết nối không an toàn. Đặc biệt đối với các website `thương mại điện tử`, việc không bảo mật sẽ khiến doanh nghiệp đánh mất lượng lớn khách hàng tiềm năng và doanh thu về. Chính vì thế, chứng chỉ SSL trở nên vô cùng quan trọng.
 
-1. SSL là gì ?
+### 1. SSL là gì ?
 
 SSL (Secure Sockets Layer) là một [giao thức](https://vi.wikipedia.org/wiki/Giao_th%E1%BB%A9c_truy%E1%BB%81n_th%C3%B4ng) bảo mật được sử dụng để tạo kết nối an toàn giữa `trình duyệt web` và `máy chủ web`. Nó mã hóa dữ liệu truyền giữa client và server, đảm bảo rằng thông tin không bị đánh cắp hoặc can thiệp bởi bên thứ ba. Hiện nay, SSL được xem là tiêu chuẩn bảo mật cho đa số website trên thế giới, giúp dữ liệu truyền đi trên `Internet` được bảo vệ một cách an toàn.
 
-SSL được `Netscape` phát triển lần đầu vào năm 1995. Với mục đích đảm bảo quyền riêng tư, xác thực toàn vẹn dữ liệu trong truyền thông `Internet`. Năm 1999, SSL đã được cập nhật để trở thành [TLS](https://vietnix.vn/tls-la-gi/) ( Transport Layer Security) 
+SSL được `Netscape` phát triển lần đầu vào năm 1995. Với mục đích đảm bảo quyền riêng tư, xác thực toàn vẹn dữ liệu trong truyền thông `Internet`. 
 
+SSL có các phiên bản 1.0, 2.0, 3.0 nhưng các phiên bản này đã bị tìm thấy [lỗ hổng bảo mật](https://vietnix.vn/lo-hong-bao-mat/) và không còn được sử dụng nữa.
 
-2. Có bao nhiêu cách chứng thực SSL ?
+Năm 1999, SSL đã được cập nhật để trở thành [TLS](https://vietnix.vn/tls-la-gi/) ( Transport Layer Security) 
+
+TLS có các phiên bản 1.0, 1.1, 1.2 và 1.3 trong đó TLS 1.2 và 1.3 là các phiên bản được sử dụng rộng rãi hiện nay.
+
+### 2. Có bao nhiêu cách chứng thực SSL ?
 
 Có 2 cách chứng thực SSL chính:
 
-   - Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - CA): Các tổ chức như Let's Encrypt, DigiCert, GoDaddy, v.v. cung cấp và quản lý các chứng chỉ SSL.
+- Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - `CA`): Các tổ chức như `Let's Encrypt`, `DigiCert` , `GoDaddy`, v.v. cung cấp và quản lý các chứng chỉ SSL.
  
-   - Chứng thực sử dụng chứng chỉ tự ký (self-signed certificate): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
+- Chứng thực sử dụng chứng chỉ tự ký (`self-signed certificate`): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
 
 
-CSR file dùng làm gì trong quá trình tạo SSL
+### 3. CSR file dùng làm gì trong quá trình tạo SSL?
 
-Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain tech.training.vietnix.tech
+CSR (`Certificate Signing Request`) : Đây là một đoạn text chứa thông tin của chủ sở hữu tên miền được mã hóa(gồm thông tin máy chủ, tên miền và thông tin xác thực khác). Thông tin này sẽ được dùng để gửi đến nhà cung cấp dịch vụ SSL để xác nhận.
+
+### 4. Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain `tech.training.vietnix.tech`
+
+Để tạo CSR file sử dụng OpenSSL cho domain `tech.training.vietnix.tech`, bạn có thể sử dụng lệnh sau:
+
+   ```
+   openssl req -new -newkey rsa:2048 -nodes -keyout tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
+   ```
+
+Trong đó:
+
+`openssl req -new`: Lệnh này yêu cầu OPENSSL tạo một Certificate Signing Request(CSR) mới.
+
+`-newkey rsa:2048`: Tùy chọn này chỉ định việc tạo một khóa RSA(`Private key`) mới có độ dài 2048 bits. Độ dài khóa 2048 bits là khuyến nghị hiện nay để đảm bảo an toàn.
+
+`-nodes`: Tùy chọn này chỉ định rằng private key không cần được mã hóa bằng mật khẩu. Điều này tiện cho việc sử dụng khóa mà không cần nhập mật khẩu thuận tiện cho việc tự động hóa backup, restore. 
+
+- Điều này thường được cân nhắc khi sử dụng khóa ở các hệ thống an toàn và được quản lý tốt. Nếu muốn mã hóa khóa riêng chỉ cần bỏ tùy chọn  `-nodes` và nhập mật khẩu an toàn sau khi thực hiện câu lệnh trên.
+
+`-keyout tech.training.vietnix.key` : Tùy chọn này chỉ định tệp tin để lưu trữ khóa riêng (private key) được tạo ra. Trong trường hợp này, tệp tin sẽ có tên `tech.training.vietnix.tech.key`.
+
+`-out tech.training.vietnix.tech.csr`: Tùy chọn này chỉ định tệp tin để lưu trữ Certificate Signing Request(CSR) được tạo ra. Trong trường hợp này, tệp tin sẽ có tên `tech.training.vietnix.tech.csr`.
+
+   Khi chạy lệnh này, OPENSSL sẽ yêu cầu bạn nhập một số thông tin về chứng chỉ như: tên, quốc gia, tiểu bang, thành phố, tên cty, tên bộ phận, tên miền. Sau khi nhập đầy đủ thông tin OPENSSL sẽ tạo ra 2 file như trên.
+
+
+
+
+
+
+
+
+
+Sau đó, bạn có thể gửi file CSR (tech.training.vietnix.tech.csr) đến CA để yêu cầu cấp chứng chỉ SSL.
+   
 
 Pem file là gì ?
 
 Private key ssl là gì ?
 
 PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
-
-
-
-2. C
-
-3. CSR (Certificate Signing Request) file là một yêu cầu gửi đến Tổ chức Chứng nhận để nhận được một chứng chỉ SSL hợp lệ. Nó chứa thông tin về máy chủ, tên miền và thông tin xác thực khác mà CA sẽ sử dụng để cấp chứng chỉ.
-
-4. Để tạo CSR file sử dụng OpenSSL cho domain tech.training.vietnix.tech, bạn có thể sử dụng lệnh sau:
-
-   ```
-   openssl req -new -newkey rsa:2048 -nodes -keyout tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
-   ```
-
-   Sau đó, bạn có thể gửi file CSR (tech.training.vietnix.tech.csr) đến CA để yêu cầu cấp chứng chỉ SSL.
 
 5. PEM file là một định dạng mã hóa chứng chỉ SSL. Nó có thể chứa chứng chỉ công khai, khóa riêng tư hoặc cả hai. PEM file thường được nhận dạng bởi phần mở rộng ".crt" hoặc ".pem".
 
