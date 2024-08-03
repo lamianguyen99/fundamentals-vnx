@@ -111,13 +111,14 @@ PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
    Lệnh này sẽ tạo ra file PFX có tên `tech.training.vietnix.tech.pfx` từ file CRT và Private Key.
 
    
-Domain
+# Domain
 
-Domain là gì ?
-Các trạng thái của domain
-Subdomain là gì?
-Virtual Hosts là gì?
+1. Domain là gì ?
+2. Các trạng thái của domain
+3. Subdomain là gì?
+4. Virtual Hosts là gì?
 
+```
 1. Domain (tên miền) là một địa chỉ trên internet dùng để định danh một website hoặc dịch vụ trực tuyến. Nó giúp người dùng dễ dàng truy cập và nhớ địa chỉ của website thay vì sử dụng địa chỉ IP.
 
 2. Các trạng thái phổ biến của một domain:
@@ -129,7 +130,7 @@ Virtual Hosts là gì?
 3. Subdomain là một phần của domain chính, được sử dụng để tổ chức và phân chia nội dung. Ví dụ: `www.example.com` là subdomain của `example.com`.
 
 4. Virtual Hosts là một tính năng của web server cho phép chạy nhiều website trên cùng một địa chỉ IP. Điều này giúp tối ưu hóa việc sử dụng tài nguyên máy chủ và quản lý nhiều website cùng lúc.
-
+```
    
 Mail Server
 
