@@ -22,7 +22,7 @@ code inline `sieu dep` ne
 @@@@@@@@@@@@@@@@
 
 
-SSL
+## SSL
 
 SSL là gì ?
 
@@ -151,6 +151,7 @@ Tìm hiểu DKIM, SPF, PTR
    - PTR record giúp xác thực danh tính của người gửi email và chống lại các cuộc tấn công spoofing.
 
 Tóm lại, MX, DKIM, SPF và PTR record là các công cụ quan trọng để bảo vệ email khỏi các cuộc tấn công và xác thực danh tính của người gửi.
+
 
 
 DNS
