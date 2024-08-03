@@ -1,16 +1,5 @@
 # Kiến thưc cơ bản-vnx
 
-## Bảng
-
-| Cột 1 | Cột 2 | Cột 3 |
-| --- | --- | --- |
-| Giá trị 1 | Giá trị 2 | Giá trị 3 |
-| Giá trị 4 | Giá trị 5 | Giá trị 6 |
-| Giá trị 1 | Giá trị 2 | Giá trị 3 |
-| Giá trị 4 | Giá trị 5 | Giá trị 6 |
-| Giá trị 1 | Giá trị 2 | Giá trị 3 |
-| Giá trị 4 | Giá trị 5 | Giá trị 6 |
-
 ## Gắn thẻ người dùng
 
 Hãy chào @username!
@@ -28,40 +17,6 @@ Tôi rất :grinning: khi sử dụng Markdown trên GitHub!
 ~~gach giua~~
 
 code inline `sieu dep` ne
-
-> # trich dan sieu cap
->
-> Trich dan thu cap
-
->## Trich dan sieu cap 2
-
-> Trich dan `thu cap` 2 
-
-
->### Trich dan sieu cap 3
->
-> `Trich dan` thu cap 3
-
-
-```
-1. cap1
- 
-2. cap2
-
-3. cap3
-
-  3.1 cap 3.1
-
-```
-
-
-```py
-
-print("format code")
-```
-
-
-
 @@@@@@@@@@@@@@@@
 
 @@@@@@@@@@@@@@@@
