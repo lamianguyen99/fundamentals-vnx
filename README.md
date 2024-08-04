@@ -1,15 +1,14 @@
 # Kiến thưc cơ bản- Vietnix
 
-```
-> [SSL](https://vietnix.vn/ssl-la-gi/)
-> 
-> [Domain](https://vietnix.vn/domain-la-gi/)
-> 
-> [Mail Server](https://vietnix.vn/mail-server-la-gi/)
->
-> [DNS](https://vietnix.vn/dns-la-gi/)
-```
+[SSL](https://vietnix.vn/ssl-la-gi/)
 
+[Domain](https://vietnix.vn/domain-la-gi/)
+
+[Mail Server](https://vietnix.vn/mail-server-la-gi/)
+
+[DNS](https://vietnix.vn/dns-la-gi/)
+
+---
 ## SSL
 
 
