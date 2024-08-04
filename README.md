@@ -1,4 +1,14 @@
-# Kiến thưc cơ bản-vnx
+# Kiến thưc cơ bản- Vietnix
+
+```
+> [SSL](https://vietnix.vn/ssl-la-gi/)
+> 
+> [Domain](https://vietnix.vn/domain-la-gi/)
+> 
+> [Mail Server](https://vietnix.vn/mail-server-la-gi/)
+>
+> [DNS](https://vietnix.vn/dns-la-gi/)
+```
 
 ## SSL
 
@@ -221,85 +231,165 @@ Virtual Host là một giải pháp khá hiệu quả và tiết kiệm chi phí
 
 ### 1. Tìm hiểu MX Record
 
-1. **Định nghĩa**: MX record là một loại bản ghi DNS (Domain Name System) được sử dụng để chỉ định máy chủ email chính thức của một miền (domain) cụ thể. Khi một email được gửi đến một địa chỉ email trong miền, hệ thống sẽ tham khảo bản ghi MX để xác định nơi lưu trữ và chuyển tiếp email.
+**Định nghĩa**: MX record là một loại bản ghi DNS (Domain Name System) được sử dụng để chỉ định máy chủ email chính thức của một miền (domain) cụ thể. Khi một email được gửi đến một địa chỉ email trong miền, hệ thống sẽ tham khảo bản ghi MX để xác định nơi lưu trữ và chuyển tiếp email.
 
-2. **Cấu trúc**: Một bản ghi MX bao gồm hai thành phần chính:
+**Cấu trúc**: Một bản ghi MX bao gồm hai thành phần chính:
    - Ưu tiên (Priority): Một số nguyên dương từ 0 đến 65535 để xác định thứ tự ưu tiên xử lý email. Số thấp hơn có ưu tiên cao hơn.
    - Tên miền (Domain name): Tên miền của máy chủ email, không phải địa chỉ IP trực tiếp.
 
-3. **Ưu tiên và Failover**: Việc có nhiều bản ghi MX với các mức ưu tiên khác nhau cung cấp khả năng dự phòng (failover) cho các máy chủ email. Nếu máy chủ email chính gặp sự cố, hệ thống sẽ tự động chuyển sang máy chủ email dự phòng có ưu tiên tiếp theo.
+![](https://vietnix.vn/wp-content/uploads/2022/10/cac-thuat-ngu-thuong-su-dung-trong-mail-server-5.webp)
 
-4. **Quản lý Mail Delivery**: Khi gửi email đến một địa chỉ email, hệ thống sẽ thực hiện các bước sau:
+**Ưu tiên và Failover**: Việc có nhiều bản ghi MX với các mức ưu tiên khác nhau cung cấp khả năng dự phòng(`failover`) cho các máy chủ email. Nếu máy chủ email chính gặp sự cố, hệ thống sẽ tự động chuyển sang máy chủ email dự phòng có ưu tiên tiếp theo.
+
+**Quản lý Mail Delivery**: Khi gửi email đến một địa chỉ email, hệ thống sẽ thực hiện các bước sau:
    - Truy vấn DNS để tìm bản ghi MX của miền.
    - Liên hệ với máy chủ email có ưu tiên cao nhất trong danh sách bản ghi MX.
    - Nếu máy chủ email chính không phản hồi, sẽ thử liên hệ với máy chủ email có ưu tiên tiếp theo.
 
-5. **Ứng dụng và Lợi ích**:
+**Ứng dụng và Lợi ích**:
    - Cho phép dễ dàng thay đổi địa chỉ IP của máy chủ email mà không cần thay đổi bản ghi MX.
    - Hỗ trợ khả năng dự phòng và gia tăng độ tin cậy của dịch vụ email.
    - Giúp các nhà cung cấp dịch vụ email lọc và chống spam hiệu quả hơn.
 
 Hiểu rõ về MX record là rất quan trọng để quản lý và cấu hình email domain một cách chính xác và hiệu quả.
 
+### 2. Tìm hiểu DKIM, SPF, PTR
 
+### DKIM (DomainKeys Identified Mail):
 
+---
 
+**Định nghĩa và Mục đích**:
 
-Tìm hiểu DKIM, SPF, PTR
+   - `DKIM` (DomainKeys Identified Mail) là một phương pháp xác thực email được thiết kế để ngăn chặn các cuộc tấn công giả mạo email (email spoofing).
 
+   - Mục đích chính của `DKIM` là giúp người nhận email xác định được email đó thực sự được gửi từ tên miền (domain) mà nó tự xác nhận.
 
+**Cách Thức Hoạt Động**:
+   
+   - Khi một email được gửi, `DKIM` sẽ tạo ra một chữ ký số (digital signature) và đính kèm vào header của email.
+   
+   - Chữ ký số này được tạo ra bằng cách sử dụng khóa riêng tư (private key) của tên miền gửi email.
+   
+   - Khi email được nhận, mail server sẽ sử dụng khóa công khai (public key) của tên miền để xác thực chữ ký số trong email.
+   
+   - Nếu chữ ký số hợp lệ, email sẽ được coi là đáng tin cậy và không bị giả mạo.
 
-2. DKIM (DomainKeys Identified Mail):
-   - DKIM là một phương pháp xác thực email, cho phép chủ domain ký số các email được gửi đi.
-   - Khi email được gửi, DKIM sẽ thêm chữ ký số vào header của email.
-   - Khi email được nhận, mail server sẽ xác thực chữ ký số này để đảm bảo email thực sự được gửi từ domain đó.
-   - DKIM giúp ngăn chặn các cuộc tấn công spoofing (giả mạo) email.
+ **Lợi Ích của DKIM**:
+   
+   - Ngăn chặn tấn công giả mạo email (email spoofing) bằng cách xác minh domain của người gửi.
+   
+   - Tăng độ tin cậy và uy tín của email, giúp tránh bị đánh dấu là spam.
+   
+   - Hỗ trợ các nhà cung cấp dịch vụ email lọc và chống spam hiệu quả hơn.
+   
+   - Giúp người nhận email có thể xác định email đáng tin cậy và chính xác.
 
-3. SPF (Sender Policy Framework):
-   - SPF là một bản ghi DNS cho phép domain chủ sở hữu xác định những máy chủ nào được phép gửi email từ tên miền đó.
-   - Khi email được gửi đến một domain, mail server sẽ kiểm tra SPF record để xác định xem email có được gửi từ một máy chủ hợp lệ hay không.
-   - SPF giúp ngăn chặn các cuộc tấn công spoofing email.
+**Cấu Hình DKIM**:
+   
+   - Để cài đặt `DKIM`, quản trị viên cần tạo một cặp khóa công khai/riêng tư (public/private key) cho tên miền.
+   
+   - Khóa công khai sẽ được thêm vào bản ghi DNS của tên miền dưới dạng bản ghi TXT.
+   
+   - Khóa riêng tư sẽ được sử dụng để ký các email được gửi từ tên miền đó.
 
-4. PTR Record (Pointer Record):
+### SPF (Sender Policy Framework):
+   
+Bản ghi `SPF` được sử dụng chủ yếu để quản lý và kiểm soát luồng email đi từ nội bộ ra bên ngoài thông qua tên miền của tổ chức.
+
+Cụ thể:
+
+1. Nội bộ tổ chức: Bằng cách liệt kê những máy chủ email được phép gửi từ tên miền công ty (ví dụ example.com) trong bản ghi SPF, tổ chức có thể xác định rõ những nguồn email nội bộ được phép sử dụng tên miền này.
+
+2. Bên ngoài tổ chức: Khi email được gửi từ tên miền "example.com" đến bên ngoài, các hệ thống email nhận sẽ kiểm tra bản ghi SPF. Nếu nguồn email không nằm trong danh sách được phép, thì email có thể bị đánh dấu là spam hoặc bị từ chối.
+
+Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng tên miền công ty trong email, ngăn ngừa các hoạt động giả mạo hoặc lạm dụng tên miền để gửi thư rác từ bên ngoài.
+
+Điều này rất quan trọng để bảo vệ uy tín và tránh email công ty bị nhận nhầm là spam.
+
+### PTR Record (Pointer Record):
+   
    - PTR record được sử dụng để ánh xạ địa chỉ IP thành tên miền.
+   
    - Khi một email được gửi đến, mail server sẽ kiểm tra PTR record để xác định tên miền tương ứng với địa chỉ IP của máy chủ gửi email.
+   
    - PTR record giúp xác thực danh tính của người gửi email và chống lại các cuộc tấn công spoofing.
 
-Tóm lại, MX, DKIM, SPF và PTR record là các công cụ quan trọng để bảo vệ email khỏi các cuộc tấn công và xác thực danh tính của người gửi.
 
+## DNS
 
+### 1. DNS là gì ?
 
-DNS
+> DNS (Domain Name System):
 
-DNS là gì ?
-
-Các loại recored DNS
-
-Nguyên tắc làm việc của DNS
-
-Cách phân giải địa chỉ DNS
-
-1. DNS (Domain Name System):
    - DNS là một hệ thống phân cấp dùng để ánh xạ tên miền (domain name) sang địa chỉ IP.
-   - Nó giúp người dùng truy cập website bằng tên miền dễ nhớ thay vì phải sử dụng địa chỉ IP khó nhớ.
 
-2. Các loại record DNS:
-   - A record: Ánh xạ tên miền sang địa chỉ IPv4.
-   - AAAA record: Ánh xạ tên miền sang địa chỉ IPv6.
-   - CNAME record: Tạo bí danh (alias) cho một tên miền.
-   - MX record: Chỉ định mail server nào sẽ nhận email gửi đến domain.
-   - NS record: Chỉ định server tên miền nào quản lý một domain.
-   - PTR record: Ánh xạ địa chỉ IP sang tên miền.
+   - Nó giúp người dùng truy cập website bằng tên miền dễ nhớ thay vì phải sử dụng địa chỉ IP khó nhớ. Ví dụ: `265.15.75.210` sẽ khó nhớ hơn `vietnix.com`
+   - 
+### 2. Các loại recored DNS
 
-3. Nguyên tắc hoạt động của DNS:
+
+> Các loại record DNS:
+
+   - **A record**: Ánh xạ tên miền sang địa chỉ IPv4.
+
+      `www.mywebsite.com. A 192.168.1.100`
+
+      + Giả sử bạn có một wwebsite cá nhân `www.example.com` và website này được lưu trữ trên một máy chủ web có địa chỉ `192.168.1.100`
+
+   - **AAAA record**: Ánh xạ tên miền sang địa chỉ IPv6.
+      
+      `www.mywebsite.com. AAAA 2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+
+      + Giả sử bạn có một trang website được lưu trữ trên một máy chủ web có địa chỉ IPV6 là như trên.
+      
+   - **CNAME record**: Tạo bí danh (alias) cho một tên miền.
+
+       `example.com. CNAME www.example.com.`
+       
+       + Giả sử bạn có một website chính `www.example.com` và muốn tạo một bí danh(alias) `example.com` để người dùng có thể truy cập web site bằng cả 2 tên miền.
+        
+   - **MX record**: Chỉ định mail server nào sẽ nhận email gửi đến domain.
+
+     ```
+     example.com. MX 10 mail.example.com.
+     mail.example.com. A 192.168.1.100
+     ```
+     + Ví dụ, giả sử bạn có một tên miền `example.com` và bạn muốn **email** gửi đến `example.com` được chuyển đến **máy chủ email** có địa chỉ IP `192.168.1.100`.
+
+   - **NS record**: Chỉ định server tên miền nào quản lý một domain.
+
+      ```
+      example.com. NS ns1.example.com.
+      example.com. NS ns2.example.com.
+      ```
+
+      + Ví dụ, giả sử bạn có một tên miền `example.com` và bạn muốn chỉ định rằng tên miền này được quản lý bởi hai máy chủ tên miền: `ns1.example.com` và `ns2.example.com`.
+
+   - **PTR record**: Ánh xạ địa chỉ IP sang tên miền.
+       
+       ```
+       100.1.168.192.in-addr.arpa. PTR mail.example.com.
+       ```
+
+       + Ví dụ, giả sử bạn có một địa chỉ IP `192.168.1.100` và bạn muốn xác định tên miền tương ứng với địa chỉ IP này. Trong trường hợp này, bạn sẽ cần tạo một bản ghi PTR như sau:
+
+### 3. Nguyên tắc làm việc của DNS
+
+
    - Khi người dùng truy cập một website bằng tên miền, trình duyệt sẽ gửi yêu cầu đến DNS server.
-   - DNS server sẽ tra cứu các record DNS để tìm ra địa chỉ IP tương ứng với tên miền.
+   
+   - DNS server sẽ tra cứu các `record DNS` để tìm ra địa chỉ IP tương ứng với tên miền.
+   
    - Trình duyệt sẽ sử dụng địa chỉ IP này để thiết lập kết nối với web server.
 
-4. Cách phân giải địa chỉ DNS:
-   - Trình duyệt sẽ kiểm tra bộ nhớ cache DNS cục bộ trước.
+### 4. Cách phân giải địa chỉ DNS
+
+   - Trình duyệt sẽ kiểm tra `bộ nhớ cache DNS cục bộ` trước. Đây là bộ nhớ lưu trữ các bản ghi mà trình duyệt đã phân giải trước đó.
+   
    - Nếu không tìm thấy, trình duyệt sẽ gửi yêu cầu đến DNS server cấp cao hơn (như DNS server của ISP).
-   - Các DNS server sẽ lần lượt tra cứu các record DNS để tìm ra địa chỉ IP cuối cùng.
+   
+   - Các DNS server sẽ lần lượt tra cứu các `record DNS` để tìm ra địa chỉ IP cuối cùng.
+   
    - Kết quả được trả về cho trình duyệt để thiết lập kết nối.
 
-Tóm lại, DNS là hệ thống cung cấp dịch vụ ánh xạ tên miền sang địa chỉ IP, giúp người dùng truy cập website dễ dàng hơn.
