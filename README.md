@@ -16,7 +16,7 @@
 
 ### 1. SSL là gì ?
 
-SSL (Secure Sockets Layer) là một [giao thức](https://vi.wikipedia.org/wiki/Giao_th%E1%BB%A9c_truy%E1%BB%81n_th%C3%B4ng) bảo mật được sử dụng để tạo kết nối an toàn giữa `trình duyệt web` và `máy chủ web`. Nó mã hóa dữ liệu truyền giữa client và server, đảm bảo rằng thông tin không bị đánh cắp hoặc can thiệp bởi bên thứ ba. Hiện nay, SSL được xem là tiêu chuẩn bảo mật cho đa số website trên thế giới, giúp dữ liệu truyền đi trên `Internet` được bảo vệ một cách an toàn.
+SSL (Secure Sockets Layer) là một [giao thức](https://vietnix.vn/protocol-la-gi/) bảo mật được sử dụng để tạo kết nối an toàn giữa `trình duyệt web` và `máy chủ web`. Nó mã hóa dữ liệu truyền giữa client và server, đảm bảo rằng thông tin không bị đánh cắp hoặc can thiệp bởi bên thứ ba. Hiện nay, SSL được xem là tiêu chuẩn bảo mật cho đa số website trên thế giới, giúp dữ liệu truyền đi trên `Internet` được bảo vệ một cách an toàn.
 
 SSL được `Netscape` phát triển lần đầu vào năm 1995. Với mục đích đảm bảo quyền riêng tư, xác thực toàn vẹn dữ liệu trong truyền thông `Internet`. 
 
