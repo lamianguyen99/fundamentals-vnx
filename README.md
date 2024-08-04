@@ -390,6 +390,10 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
    
    - Kết quả được trả về cho trình duyệt để thiết lập kết nối.
 
-### Tác giả: *Quang Huy* 
 
 ### Nguồn: [Vietnix](https://vietnix.vn/category/kien-thuc-dich-vu/), [Wikipedia](https://vi.wikipedia.org/wiki/Internet_Protocol), .v.v.... 
+
+
+
+
+### Tác giả: *Quang Huy* 
