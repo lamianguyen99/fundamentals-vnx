@@ -100,7 +100,6 @@ Chứng chỉ số này chứa thông tin như tên miền, tổ chức phát h�
 
 3. CA Bundle file (.pem): Chứa chuỗi chứng chỉ `CA trung gian` để xác thực chuỗi tin cậy của chứng chỉ CA ban đầu.
 
----
 
 ĐĂNG KÝ SSL/TLS cũng giống như bạn đi đăng ký giấy kết hôn:
 ```
