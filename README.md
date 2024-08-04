@@ -102,21 +102,63 @@ Bundle CA  : Xác nhận của các tổ chức, cơ quan cấp cao về sự h�
 ```
 
 
-Private key ssl là gì ?
+### 6. Private key ssl là gì ?
 
-PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
+Private key là một phần quan trọng của hệ thống bảo mật SSL/TLS, được sử dụng để tạo ra kết nối an toàn giữa người dùng và máy chủ trên Internet.
 
-5. PEM file là một định dạng mã hóa chứng chỉ SSL. Nó có thể chứa chứng chỉ công khai, khóa riêng tư hoặc cả hai. PEM file thường được nhận dạng bởi phần mở rộng ".crt" hoặc ".pem".
+Ứng dụng của private key:
 
-6. Private key SSL là một phần không thể thiếu của chứng chỉ SSL. Nó được sử dụng để mã hóa và giải mã dữ liệu được truyền giữa trình duyệt và máy chủ. Private key phải được giữ an toàn và không được chia sẻ với bất kỳ ai khác.
+- Được sử dụng để mã hóa tạo ra chữ ký số, xác nhận rằng máy chủ sở hữu chứng chỉ ssl hợp lệ.
 
-7. PFX (Personal Information Exchange) file là một định dạng tập tin chứa chứng chỉ SSL và khóa riêng tư trong một tập tin duy nhất. Nó thường được sử dụng trong các ứng dụng Windows. Để chuyển từ file CRT sang PFX, bạn có thể sử dụng lệnh sau:
+- Khi người dùng truy cập trang website, trình duyện sẽ sử dụng private key trong chứng chỉ SSL để xác minh chữ ký số do private key tạo ra.
+
+- Được sử dụng để mã hóa dữ liệu được truyền giữa người dùng va máy chủ.
+
+- Điều này giúp bảo vệ thông tin nhạy cảm như thông tin thanh toán, đăng nhập.vv..v.. khỏi bị đánh cắp.
+
+- Private key được sử dụng để giải mã dữ liệu được mã hóa bằng public key.
+
+- Điều này đảm bảo rằng chỉ máy chử sở hữu private key mới có thể đọc đươc thông tin.
+
+Private key được tạo ra từ việc sử dụng các thuật toán mã hóa như RSA, ECC.v.v...
+
+
+> Các bước xác thực khi truy cập trang web:
+> 
+> 1. Người dùng truy cập vào trang web. Gửi một Request lên gồm URL trang web, HTTP headers (trình duyệt, hệ điều hành cảu người dùng), IP người dùng.
+> 
+> 2. Trang web thu thập các thông tin cần thiết như nội dung trang, thời gian, thông tin về kết nối, thông tin người dùng.
+> 
+> 3. Trang web sử dụng các thông tin này rồi dùng `private key` để mã hóa tạo ra một `chữ ký số`.
+> 
+> 4. Trang web gửi `dữ liệu` cùng với `chữ ký số` đến người dùng.
+> 
+> 5. Người dùng sử dụng `public key` để giải mã chữ ký số.
+> 
+> 6. Sau khi giải mã, nếu dữ liệu giải mã khớp với dữ liệu được gửi từ trang web, thì người dùng có thể xác định rằng dữ liệu là hợp lệ, chưa bị thay đổi.
+
+
+### 7. PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
+
+7. PFX (Personal Information Exchange) file là một `định dạng tập tin` chứa `chứng chỉ SSL` và `khóa riêng tư` trong một tập tin duy nhất. Nó thường được sử dụng trong các ứng dụng Windows. Để chuyển từ file CRT sang PFX, bạn có thể sử dụng lệnh sau:
 
    ```
    openssl pkcs12 -export -in tech.training.vietnix.tech.crt -inkey tech.training.vietnix.tech.key -out tech.training.vietnix.tech.pfx
    ```
+   
+1. `openssl`: Đây là công cụ command-line để làm việc với các chứng chỉ SSL/TLS, mã hóa và các công nghệ liên quan.
 
-   Lệnh này sẽ tạo ra file PFX có tên `tech.training.vietnix.tech.pfx` từ file CRT và Private Key.
+2. `pkcs12`: Đây là một định dạng tệp tin chứa các thông tin về chứng chỉ và khóa riêng. Nó thường được sử dụng để đóng gói chứng chỉ và khóa riêng vào một tệp tin duy nhất.
+
+3. `-export`: Tùy chọn này cho biết rằng chúng ta muốn xuất (export) các thông tin từ chứng chỉ và khóa riêng vào tệp tin PKCS12.
+
+4. `-in tech.training.vietnix.tech.crt`: Đây là đường dẫn của tệp tin chứng chỉ SSL/TLS (`.crt`) mà chúng ta muốn xuất vào tệp tin PKCS12.
+
+5. `-inkey tech.training.vietnix.tech.key`: Đây là đường dẫn của tệp tin khóa riêng (`.key`) tương ứng với chứng chỉ trên, cũng sẽ được xuất vào tệp tin PKCS12.
+
+6. `-out tech.training.vietnix.tech.pfx`: Đây là tên tệp tin PKCS12 sẽ được tạo ra, chứa cả chứng chỉ và khóa riêng.
+
+Lệnh này sẽ tạo ra file PFX có tên `tech.training.vietnix.tech.pfx` từ file CRT và Private Key.
 
    
 ## Domain
@@ -177,14 +219,35 @@ Virtual Host là một giải pháp khá hiệu quả và tiết kiệm chi phí
 
 ## Mail Server
 
-Tìm hiểu MX Record
+### 1. Tìm hiểu MX Record
+
+1. **Định nghĩa**: MX record là một loại bản ghi DNS (Domain Name System) được sử dụng để chỉ định máy chủ email chính thức của một miền (domain) cụ thể. Khi một email được gửi đến một địa chỉ email trong miền, hệ thống sẽ tham khảo bản ghi MX để xác định nơi lưu trữ và chuyển tiếp email.
+
+2. **Cấu trúc**: Một bản ghi MX bao gồm hai thành phần chính:
+   - Ưu tiên (Priority): Một số nguyên dương từ 0 đến 65535 để xác định thứ tự ưu tiên xử lý email. Số thấp hơn có ưu tiên cao hơn.
+   - Tên miền (Domain name): Tên miền của máy chủ email, không phải địa chỉ IP trực tiếp.
+
+3. **Ưu tiên và Failover**: Việc có nhiều bản ghi MX với các mức ưu tiên khác nhau cung cấp khả năng dự phòng (failover) cho các máy chủ email. Nếu máy chủ email chính gặp sự cố, hệ thống sẽ tự động chuyển sang máy chủ email dự phòng có ưu tiên tiếp theo.
+
+4. **Quản lý Mail Delivery**: Khi gửi email đến một địa chỉ email, hệ thống sẽ thực hiện các bước sau:
+   - Truy vấn DNS để tìm bản ghi MX của miền.
+   - Liên hệ với máy chủ email có ưu tiên cao nhất trong danh sách bản ghi MX.
+   - Nếu máy chủ email chính không phản hồi, sẽ thử liên hệ với máy chủ email có ưu tiên tiếp theo.
+
+5. **Ứng dụng và Lợi ích**:
+   - Cho phép dễ dàng thay đổi địa chỉ IP của máy chủ email mà không cần thay đổi bản ghi MX.
+   - Hỗ trợ khả năng dự phòng và gia tăng độ tin cậy của dịch vụ email.
+   - Giúp các nhà cung cấp dịch vụ email lọc và chống spam hiệu quả hơn.
+
+Hiểu rõ về MX record là rất quan trọng để quản lý và cấu hình email domain một cách chính xác và hiệu quả.
+
+
+
+
 
 Tìm hiểu DKIM, SPF, PTR
 
-1. MX Record (Mail eXchange Record):
-   - MX record chỉ định mail server nào sẽ nhận và xử lý email gửi đến domain.
-   - Khi email được gửi đến một domain, mail server sẽ kiểm tra MX record để xác định nơi sẽ nhận và xử lý email.
-   - MX record có thể chỉ định một hoặc nhiều mail server, mỗi server được gán một ưu tiên (priority).
+
 
 2. DKIM (DomainKeys Identified Mail):
    - DKIM là một phương pháp xác thực email, cho phép chủ domain ký số các email được gửi đi.
