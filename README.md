@@ -253,17 +253,16 @@ Hiểu rõ về MX record là rất quan trọng để quản lý và cấu hìn
 
 ### 2. Tìm hiểu DKIM, SPF, PTR
 
-### DKIM (DomainKeys Identified Mail):
+#### DKIM (DomainKeys Identified Mail):
 
----
 
-**Định nghĩa và Mục đích**:
+***Định nghĩa và Mục đích***:
 
    - `DKIM` (DomainKeys Identified Mail) là một phương pháp xác thực email được thiết kế để ngăn chặn các cuộc tấn công giả mạo email (email spoofing).
 
    - Mục đích chính của `DKIM` là giúp người nhận email xác định được email đó thực sự được gửi từ tên miền (domain) mà nó tự xác nhận.
 
-**Cách Thức Hoạt Động**:
+***Cách Thức Hoạt Động***:
    
    - Khi một email được gửi, `DKIM` sẽ tạo ra một chữ ký số (digital signature) và đính kèm vào header của email.
    
@@ -273,7 +272,7 @@ Hiểu rõ về MX record là rất quan trọng để quản lý và cấu hìn
    
    - Nếu chữ ký số hợp lệ, email sẽ được coi là đáng tin cậy và không bị giả mạo.
 
- **Lợi Ích của DKIM**:
+ ***Lợi Ích của DKIM***:
    
    - Ngăn chặn tấn công giả mạo email (email spoofing) bằng cách xác minh domain của người gửi.
    
@@ -283,15 +282,15 @@ Hiểu rõ về MX record là rất quan trọng để quản lý và cấu hìn
    
    - Giúp người nhận email có thể xác định email đáng tin cậy và chính xác.
 
-**Cấu Hình DKIM**:
-   
+***Cấu Hình DKIM***:
+
    - Để cài đặt `DKIM`, quản trị viên cần tạo một cặp khóa công khai/riêng tư (public/private key) cho tên miền.
    
    - Khóa công khai sẽ được thêm vào bản ghi DNS của tên miền dưới dạng bản ghi TXT.
    
    - Khóa riêng tư sẽ được sử dụng để ký các email được gửi từ tên miền đó.
 
-### SPF (Sender Policy Framework):
+#### SPF (Sender Policy Framework):
    
 Bản ghi `SPF` được sử dụng chủ yếu để quản lý và kiểm soát luồng email đi từ nội bộ ra bên ngoài thông qua tên miền của tổ chức.
 
@@ -305,7 +304,7 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
 
 Điều này rất quan trọng để bảo vệ uy tín và tránh email công ty bị nhận nhầm là spam.
 
-### PTR Record (Pointer Record):
+#### PTR Record (Pointer Record):
    
    - PTR record được sử dụng để ánh xạ địa chỉ IP thành tên miền.
    
