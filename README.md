@@ -1,12 +1,12 @@
 # Kiến thưc cơ bản- Vietnix
 
-[SSL](https://vietnix.vn/ssl-la-gi/)
+[SSL](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#ssl)
 
-[Domain](https://vietnix.vn/domain-la-gi/)
+[Domain](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#domain)
 
-[Mail Server](https://vietnix.vn/mail-server-la-gi/)
+[Mail Server](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#mail-server)
 
-[DNS](https://vietnix.vn/dns-la-gi/)
+[DNS](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#dns)
 
 ---
 ## SSL
