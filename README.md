@@ -2,11 +2,11 @@
 
 [SSL](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#ssl)
 
-[Domain](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#domain)
+[Domain](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#domain)
 
-[Mail Server](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#mail-server)
+[Mail Server](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#mail-server)
 
-[DNS](https://github.com/lamianguyen99/fundamentals-vnx/edit/main/README.md#dns)
+[DNS](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#dns)
 
 ---
 ## SSL
