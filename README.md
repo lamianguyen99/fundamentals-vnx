@@ -151,7 +151,7 @@ Private key được tạo ra từ việc sử dụng các thuật toán mã hó
 7. PFX (Personal Information Exchange) file là một `định dạng tập tin` chứa `chứng chỉ SSL` và `khóa riêng tư` trong một tập tin duy nhất. Nó thường được sử dụng trong các ứng dụng Windows. Để chuyển từ file CRT sang PFX, bạn có thể sử dụng lệnh sau:
 
    ```
-   openssl pkcs12 -export -in tech.training.vietnix.tech.crt -inkey tech.training.vietnix.tech.key -certfile ca-bundle.crt -out tech.training.vietnix.tech.pfx
+   openssl pkcs12 -export -in tech.training.vietnix.tech.crt -inkey tech.training.vietnix.tech.key -certfile ca-bundle.pem -out tech.training.vietnix.tech.pfx
    ```
    
 1. `openssl`: Đây là công cụ command-line để làm việc với các chứng chỉ SSL/TLS, mã hóa và các công nghệ liên quan.
@@ -201,14 +201,52 @@ Bạn có thể tạo nhiều Sub-Domain để tổ chức Website một cách h
 
 ### 2. Các trạng thái phổ biến của một Domain:
 
-- Register (dã đăng ký): Domain đã được đăng ký và thuộc về chủ sở hữu.
+**Trạng thái tên miền tại đơn vị cấp phát tên miền(Registry)**
 
-- Available (Còn trống): Doamin chưa được đăng ký và có thể được đăng ký.
+1. Trạng thái OK/Active
 
-- Expired (Đã hết hạn): Domain đã hết hạn và cần được gia hạn để tránh bị mất.
+2. Trạng thái addPeriod
 
-- Pending Delete (Chờ xóa): Domain đang trong quá trình bị xóa sau khi hết hạn.
+3. Trạng thái autoRenewPeriod
 
+4. Trạng thái inactive
+
+5. Trạng thái pendingCreate
+
+6. Trạng thái pendingDelete
+
+7. Trạng thái pendingRenew
+
+8. Trạng thái pendingRestore
+
+9. Trạng thái pendingTransfer
+
+10. Trạng thái pendingUpdate
+
+11. Trạng thái redemtionPeriod
+
+12. Trạng thái renewPeriod
+
+13. Trạng thái serverDelete Prohibited
+
+14. Trạng thái serverHold
+
+15. Trạng thái serverRenewProhibited
+
+16. Trạng thái serverTransferProhibited
+
+17. Trạng thái serverUpdateProhibited
+
+18. Trạng thái transferPeirod 
+
+**Trạng thái tên miền tại đơn vị quản lý(Nhà đăng ký) tên miền(Registrar)**
+
+1. Trạng thái clientDeleteProhibited
+2. Trạng thái clientHold
+3. Trạng thái clientRenewProhibited
+4. Trạng thái clientTransferProhibed
+5. Trạng thái clientUpdatePtohibit
+a
 ### 4. Subdomain là gì?
 
 Sub-Domain là thành phần của Domain chính, được sử dụng để tổ chức và phân chia nội dung của một trang Website. Ví dụ: `host247.vietnix.vn` là Sub-Domain của `vietnix.vn`
