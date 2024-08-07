@@ -1,4 +1,4 @@
-# Kiến thưc cơ bản- Vietnix
+# Kiến thức cơ bản- Vietnix
 
 [SSL](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#ssl)
 
