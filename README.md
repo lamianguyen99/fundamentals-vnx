@@ -94,11 +94,11 @@ Chứng chỉ số này chứa thông tin như tên miền, tổ chức phát h�
 
 Để cài đặt chứng chỉ SSL/TLS trên máy chủ website, cần có 3 file chính: 
  
-1. Certificate file (.crt/.pem): chứa `chứng chỉ số` của website tự ký hoặc được CA cấp.
+1. **Certificate file (.crt/.pem)**: chứa `chứng chỉ số` của website tự ký hoặc được CA cấp.
 
-2. Private key file(.key/.pem) chứa `private key` để mã hóa/giải mã dữ liệu.
+2. **Private key file(.key/.pem)**: chứa `private key` để mã hóa/giải mã dữ liệu.
 
-3. CA Bundle file (.pem): Chứa chuỗi chứng chỉ `CA trung gian` để xác thực chuỗi tin cậy của chứng chỉ CA ban đầu.
+3. **CA Bundle file (.pem)**: Chứa chuỗi chứng chỉ `CA trung gian` để xác thực chuỗi tin cậy của chứng chỉ CA ban đầu.
 
 
 ĐĂNG KÝ SSL/TLS cũng giống như bạn đi đăng ký giấy kết hôn:
@@ -244,8 +244,8 @@ Bạn có thể tạo nhiều Sub-Domain để tổ chức Website một cách h
 1. Trạng thái clientDeleteProhibited
 2. Trạng thái clientHold
 3. Trạng thái clientRenewProhibited
-4. Trạng thái clientTransferProhibed
-5. Trạng thái clientUpdatePtohibit
+4. Trạng thái clientTransferProhibited
+5. Trạng thái clientUpdateProhibited
 a
 ### 4. Subdomain là gì?
 
@@ -346,27 +346,26 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
 
 #### PTR Record (Pointer Record):
    
-   - PTR record được sử dụng để ánh xạ địa chỉ IP thành tên miền.
+   - `PTR record` được sử dụng để ánh xạ địa chỉ IP thành tên miền.
    
    - Khi một email được gửi đến, mail server sẽ kiểm tra PTR record để xác định tên miền tương ứng với địa chỉ IP của máy chủ gửi email.
    
-   - PTR record giúp xác thực danh tính của người gửi email và chống lại các cuộc tấn công spoofing.
+   - `PTR record` giúp xác thực danh tính của người gửi email và chống lại các cuộc tấn công spoofing.
 
 
 ## DNS
 
 ### 1. DNS là gì ?
 
-> DNS (Domain Name System):
+**DNS (Domain Name System):**
 
    - DNS là một hệ thống phân cấp dùng để ánh xạ tên miền (domain name) sang địa chỉ IP.
 
    - Nó giúp người dùng truy cập website bằng tên miền dễ nhớ thay vì phải sử dụng địa chỉ IP khó nhớ. Ví dụ: `265.15.75.210` sẽ khó nhớ hơn `vietnix.com`
-   - 
+    
 ### 2. Các loại recored DNS
 
-
-> Các loại record DNS:
+**Các loại record DNS:**
 
    - **A record**: Ánh xạ tên miền sang địa chỉ IPv4.
 
