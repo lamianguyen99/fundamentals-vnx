@@ -151,7 +151,7 @@ Private key được tạo ra từ việc sử dụng các thuật toán mã hó
 7. PFX (Personal Information Exchange) file là một `định dạng tập tin` chứa `chứng chỉ SSL` và `khóa riêng tư` trong một tập tin duy nhất. Nó thường được sử dụng trong các ứng dụng Windows. Để chuyển từ file CRT sang PFX, bạn có thể sử dụng lệnh sau:
 
    ```
-   openssl pkcs12 -export -in tech.training.vietnix.tech.crt -inkey tech.training.vietnix.tech.key -out tech.training.vietnix.tech.pfx
+   openssl pkcs12 -export -in tech.training.vietnix.tech.crt -inkey tech.training.vietnix.tech.key -certfile ca-bundle.crt -out tech.training.vietnix.tech.pfx
    ```
    
 1. `openssl`: Đây là công cụ command-line để làm việc với các chứng chỉ SSL/TLS, mã hóa và các công nghệ liên quan.
@@ -165,6 +165,8 @@ Private key được tạo ra từ việc sử dụng các thuật toán mã hó
 5. `-inkey tech.training.vietnix.tech.key`: Đây là đường dẫn của tệp tin khóa riêng (`.key`) tương ứng với chứng chỉ trên, cũng sẽ được xuất vào tệp tin PKCS12.
 
 6. `-out tech.training.vietnix.tech.pfx`: Đây là tên tệp tin PKCS12 sẽ được tạo ra, chứa cả chứng chỉ và khóa riêng.
+
+7. `-certfile ca-bundle.crt` : Đây là đường dẫn đến file chứng chỉ trung gian (CA bundle) mà bạn muốn bao gồm trong file PFX.
 
 Lệnh này sẽ tạo ra file PFX có tên `tech.training.vietnix.tech.pfx` từ file CRT và Private Key.
 
