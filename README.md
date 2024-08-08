@@ -30,10 +30,13 @@ TLS có các phiên bản 1.0, 1.1, 1.2 và 1.3 trong đó TLS 1.2 và 1.3 là c
 
 Có 2 cách chứng thực SSL chính:
 
+
+```
 - Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - `CA`): Các tổ chức như `Let's Encrypt`, `DigiCert` , `GoDaddy`, v.v. cung cấp và quản lý các chứng chỉ SSL.
  
 - Chứng thực sử dụng chứng chỉ tự ký (`self-signed certificate`): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
 
+```
 
 ### 3. CSR file dùng làm gì trong quá trình tạo SSL?
 
@@ -430,9 +433,45 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
    - Kết quả được trả về cho trình duyệt để thiết lập kết nối.
 
 
+## Hosting – VPS
+
+### Hosting là gì?
+
+- `Hosting` là dịch vụ cung cấp không gian lưu trữ dữ liệu và các tài nguyên cần thiết để website của bạn hoạt động và được truy cập 24/7 trên Internet.
+
+Hosting đảm nhiệm những việc:
+
+- Lưu trữ tất cả dữ liệu của website (code, hình ảnh, video...).
+
+- Đảm bảo website hoạt động ổn định, truy cập nhanh chóng.
+
+- Cung cấp địa chỉ IP để website có thể được tìm thấy trên Internet.
+
+- Bảo mật dữ liệu website khỏi các cuộc tấn công.
+
+Lựa chọn hosting phù hợp:
+
+Có nhiều loại hosting khác nhau, phù hợp với nhu cầu và quy mô của từng website. Ví dụ:
+
+- **Shared Hosting Giá rẻ**, phù hợp với website nhỏ, ít traffic.
+
+- **VPS Hosting** Kết hợp giữ Shared và Dedicated, tài nguyên riêng biệt hơn.
+
+- **Cloud Hosting** Hoạt động trên nền tảng đám mây, ổn định, khả năng mở rộng cao .
+
+- **Wordpress Hosting** Tối ưu cho website Wordpress.
+
+- **Dedicated Hosting** : Máy chủ riêng, toàn quyền kiểm soát,chi phí cao.
+
+- **SEO Hosting** Tối ưu cho SEO với nhiều IP.
+
+- **Reseller Hosting** Dành cho đại lí Hosting.
+
+- **Hosting Linux/Window** Phân loại dựa theo hệ điều hành.
+
+**Tóm lại:** `Hosting` là yếu tố quan trọng không thể thiếu để website của bạn hoạt động online. Hãy lựa chọn nhà cung cấp uy tín và gói hosting phù hợp để website luôn hoạt động ổn định và hiệu quả.
+
 ### Nguồn: [Vietnix](https://vietnix.vn/category/kien-thuc-dich-vu/), [Wikipedia](https://vi.wikipedia.org/wiki/Internet_Protocol), .v.v.... 
-
-
 
 
 ### Tác giả: *Quang Huy* 
