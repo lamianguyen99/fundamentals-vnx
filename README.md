@@ -8,8 +8,6 @@
 
 [DNS](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#dns)
 
-[Hosting](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#hosting)
-
 
 ---
 ## SSL
@@ -436,43 +434,6 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
    - Kết quả được trả về cho trình duyệt để thiết lập kết nối.
 
 
-## Hosting
-
-### Hosting là gì?
-
-- `Hosting` là dịch vụ cung cấp không gian lưu trữ dữ liệu và các tài nguyên cần thiết để website của bạn hoạt động và được truy cập 24/7 trên Internet.
-
-Hosting đảm nhiệm những việc:
-
-- Lưu trữ tất cả dữ liệu của website (code, hình ảnh, video...).
-
-- Đảm bảo website hoạt động ổn định, truy cập nhanh chóng.
-
-- Cung cấp địa chỉ IP để website có thể được tìm thấy trên Internet.
-
-- Bảo mật dữ liệu website khỏi các cuộc tấn công.
-
-Lựa chọn hosting phù hợp:
-
-Có nhiều loại hosting khác nhau, phù hợp với nhu cầu và quy mô của từng website. Ví dụ:
-
-- **Shared Hosting Giá rẻ**, phù hợp với website nhỏ, ít traffic.
-
-- **VPS Hosting** Kết hợp giữ Shared và Dedicated, tài nguyên riêng biệt hơn.
-
-- **Cloud Hosting** Hoạt động trên nền tảng đám mây, ổn định, khả năng mở rộng cao .
-
-- **Wordpress Hosting** Tối ưu cho website Wordpress.
-
-- **Dedicated Hosting** : Máy chủ riêng, toàn quyền kiểm soát,chi phí cao.
-
-- **SEO Hosting** Tối ưu cho SEO với nhiều IP.
-
-- **Reseller Hosting** Dành cho đại lí Hosting.
-
-- **Hosting Linux/Window** Phân loại dựa theo hệ điều hành.
-
-**Tóm lại:** `Hosting` là yếu tố quan trọng không thể thiếu để website của bạn hoạt động online. Hãy lựa chọn nhà cung cấp uy tín và gói hosting phù hợp để website luôn hoạt động ổn định và hiệu quả.
 
 ### Nguồn: [Vietnix](https://vietnix.vn/category/kien-thuc-dich-vu/), [Wikipedia](https://vi.wikipedia.org/wiki/Internet_Protocol), .v.v.... 
 
