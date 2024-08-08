@@ -435,7 +435,7 @@ Như vậy, SPF giúp tổ chức kiểm soát chặt chẽ việc sử dụng t
    - Kết quả được trả về cho trình duyệt để thiết lập kết nối.
 
 
-## Hosting – VPS
+## Hosting
 
 ### Hosting là gì?
 
