@@ -39,13 +39,13 @@ Có 2 cách chứng thực SSL chính:
 
 Các loại SSL:
 
-**DV (Domain Validation):** Xác minh chủ sở hữu tên miền, cấp chứng chỉ nhanh chóng, mức độ bảo mật cơ bản.
+- **DV (Domain Validation):** Xác minh chủ sở hữu tên miền, cấp chứng chỉ nhanh chóng, mức độ bảo mật cơ bản.
 
-**OV (Organization Validation):** Xác minh thông tin doanh nghiệp, tăng cường độ tin cậy, phù hợp với website thương mại điện tử.
+- **OV (Organization Validation):** Xác minh thông tin doanh nghiệp, tăng cường độ tin cậy, phù hợp với website thương mại điện tử.
 
-**EV (Extended Validation):** Xác minh nghiêm ngặt nhất, hiển thị tên doanh nghiệp trên thanh địa chỉ, tạo sự tin tưởng tuyệt đối cho người dùng.
+- **EV (Extended Validation):** Xác minh nghiêm ngặt nhất, hiển thị tên doanh nghiệp trên thanh địa chỉ, tạo sự tin tưởng tuyệt đối cho người dùng.
 
-**Wildcard SSL:** Xác thự SSL cho tất cả sub
+- **Wildcard SSL:** Xác thự SSL cho tất cả sub
 
 
 
