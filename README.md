@@ -31,13 +31,12 @@ TLS có các phiên bản 1.0, 1.1, 1.2 và 1.3 trong đó TLS 1.2 và 1.3 là c
 
 Có 2 cách chứng thực SSL chính:
 
+- Xác thực qua file
 
-```
-- Chứng thực bởi Tổ chức Chứng nhận (Certificate Authority - `CA`): Các tổ chức như `Let's Encrypt`, `DigiCert` , `GoDaddy`, v.v. cung cấp và quản lý các chứng chỉ SSL.
- 
-- Chứng thực sử dụng chứng chỉ tự ký (`self-signed certificate`): Người dùng tự tạo và ký chứng chỉ SSL cho miền của mình.
+- Xác thực qua mail
 
-```
+- Xác thực DNS
+
 
 ### 3. CSR file dùng làm gì trong quá trình tạo SSL?
 
