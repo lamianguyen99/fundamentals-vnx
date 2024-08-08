@@ -8,7 +8,8 @@
 
 [DNS](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#dns)
 
-[Hosting](https://github.com/lamianguyen99/fundamentals-vnx?tab=readme-ov-file#hosting--vps)
+[Hosting]()
+
 
 ---
 ## SSL
